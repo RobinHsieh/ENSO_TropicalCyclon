@@ -1,0 +1,6 @@
+C NCLFORTSTART
+      subroutine ex0(a,b)
+      integer a
+      integer b
+C NCLEND
+

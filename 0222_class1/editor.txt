@@ -1,0 +1,37 @@
+===== A.在自己的家目錄中照順序輸入以下指令：=====
+
+mkdir .vim  ;（建立 .vim 目錄）
+cd .vim
+mkdir syntax
+cd syntax
+wget https://www.ncl.ucar.edu/Applications/Files/ncl3.vim
+mv ncl3.vim ncl.vim
+cd
+vi .vimrc  ;（在.vimrc 中加入這幾行）
+
+set bg=light
+hi comment ctermfg=blue
+syntax on
+nnoremap <F2> :set nonumber!<CR>
+
+au BufRead,BufNewFile *.ncl set filetype=ncl
+au! syntax newlang source .vim/ncl.vim
+
+;存檔後重新登入你的人生就會變成彩色的～
+ 
+===== B.增加NCL字典功能：=====
+
+cd .vim
+mkdir dictionary
+cd dictionary
+wget https://www.ncl.ucar.edu/Applications/Files/ncl.dic
+cd
+vi .vimrc 加入下面這幾行
+
+"Show autocomplete menus.
+set complete-=k complete+=k
+set wildmode=list:full
+set wildmenu
+au BufRead,BufNewFile *.ncl set dictionary=~/.vim/dictionary/ncl.dic
+ 
+;存檔後重新登入就可以使用快速查詢功能～

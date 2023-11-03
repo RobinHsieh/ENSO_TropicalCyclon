@@ -1,0 +1,6 @@
+C NCLFORTSTART
+	subroutine ex2_sum(a,b,c,d)
+	integer c, d
+	real a(c,d)
+	real b(c)
+C NCLEND
